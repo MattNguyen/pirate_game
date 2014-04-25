@@ -109,7 +109,7 @@
           },
           @{
               @"backgroundImageName": @"PirateBoss.jpeg",
-              @"story": @"description",
+              @"story": @"Ah this guy! DESTROY HIM!!!",
               @"actionButtonName": @"Fight!",
               @"actionButtonType": @"healthEffect",
               @"actionButtonTypeName": [NSNull null],

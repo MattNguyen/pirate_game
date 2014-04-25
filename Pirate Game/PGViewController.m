@@ -184,6 +184,13 @@
 - (IBAction)actionButtonPressed:(UIButton *)sender
 {
     [self.character updateFromTile:self.currentTile];
+    if ([self.currentTile.actionButtonTypeAmount integerValue] == -15) {
+        self.boss.healthAmount = self.boss.healthAmount - self.character.damageAmount;
+        if (self.boss.healthAmount <= 0) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Victory message" message:@"You beat the pirate boss!" delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles: nil];
+            [alertView show];
+        }
+    }
     [self updateViewWithTileAttributes:self.currentTile];
     if (self.character.healthAmount <= 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Death" message:@"You have died restart the game!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
